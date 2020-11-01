@@ -1,0 +1,123 @@
+$ pwd
+// show your current directory
+
+$ mkdir projects
+// create a directory which is called "projects"
+
+$ cd projects/
+// move current directory location to projects
+
+$ git version
+// show current Git version
+
+$ git config --global user.name "xxx"
+// add config user name as xxx
+
+$ git config --global user.email "xxx@gmail.com"
+// add config user name as xxx@gmail.com"
+
+$ git config --global --list
+// show config list items as below
+user.name=xxx
+user.email=xxx@gmail.com
+
+//Go to Github to clone area, copy the HTTP URL
+$ git clone https://github.com/xxx/demo.git
+// clone the Github repo to local drive
+
+$ ls
+// list out everything in current directory
+
+$ git status
+// show the existing git status
+
+//****
+$ git status
+On branch main		// showing you are on main branch
+Your branch is up to date with 'origin/main'.	// show you are on origin/main
+
+nothing to commit, working tree clean	// show you are in working directory is clean
+****//
+
+              Local                    |   Remote (Github)
+                                       |
+Working    | Staging |  Repository     |
+Directory  | Area    |  (.git folder)  |
+           |         |                 |
+           >         >                 >
+		   
+		   
+$ echo "Test Git Quick Start demo" >> abc.txt
+// create abc.txt file with text content "Test Git Quick Start demo"
+
+cat abc.txt
+// show the content of abc.txt file
+
+$ git status
+// show the existing git status, but this time we added abc.txt
+
+//***
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:							// show there is change in the repo
+  (use "git add <file>..." to include in what will be committed)
+        abc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+****//
+
+              Local                    |   Remote (Github)
+                                       |
+Working    | Staging |  Repository     |
+Directory  | Area    |  (.git folder)  |
+           |         |                 |
+File now   >         >                 >
+
+$ git add abc.txt		
+// git command to move file to staging area
+// git add . = add all changes
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:					// show new file is now in staging area
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc.txt
+
+              Local                    |   Remote (Github)
+                                       |
+Working    | Staging |  Repository     |
+Directory  | Area    |  (.git folder)  |
+           |         |                 |
+           > File now>                 >
+
+$ git commit -m "Adding abc text file"
+[main 034d28c] Adding abc text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 abc.txt
+ 
+              Local                    |   Remote (Github)
+                                       |
+Working    | Staging |  Repository     |
+Directory  | Area    |  (.git folder)  |
+           |         |                 |
+           >         >  file now       >
+
+// put the change in staging area to repo/.git folder with adding comment "xxx"
+
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.     // on main branch and with 1 commit
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean                  // all clean
+
+// check git status again, this time noting to commit
+
+git push origin
+// push to Remot (Github)
+
+
+
