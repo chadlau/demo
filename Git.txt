@@ -118,5 +118,7 @@ nothing to commit, working tree clean                  // all clean
 git push origin
 // push to Remot (Github)
 
+git push origin master
+// push to Remot (Github)
 
 
